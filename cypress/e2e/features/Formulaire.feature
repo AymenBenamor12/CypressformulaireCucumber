@@ -1,17 +1,15 @@
 
-Feature: Remplir le formulaire ans le site demo
-  I want to use this template for my feature file
+Feature: Remplir le formulaire ans le site demo 
 
-  @Formulaire
-  Scenario Outline: Remplir le formulaire ans le site demo
-    Given je me connecte sur application demo
-    When je remplir le champ firstname  "<firstname>"
-    When je remplir le champ lastname  "<lastname>"
-    When je remplir le champ useremail  "<useremail>"
-    When je click sur le radio gender
-    When je remplir le champ numero  "<numero>"
-    When je remplir le champ currentAdress  "<currentAdress>"
-    Then je click  sur le bouton submit
+  Scenario: Remplir le formulaire ans le site demo
+   Given je me connecte sur l'application demo
+    When je remplis le champ firstname "<firstname>"
+    When je remplis le champ lastname "<lastname>"
+    When je remplis le champ useremail "<useremail>"
+    When je clique sur le radio gender
+    When je remplis le champ numero "<numero>"
+    When je remplis le champ currentAddress "<currentAddress>"
+    Then je clique sur le bouton submit
     
 
     Examples: 

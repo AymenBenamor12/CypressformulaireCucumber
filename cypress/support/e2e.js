@@ -16,5 +16,19 @@
 // Import commands.js using ES2015 syntax:
 import './commands'
 /// <reference types ="cypress"/>
+
+Cypress.on('uncaught:exception', (err, runnable) => {
+    // Ignorer les erreurs liées aux scripts tiers
+    return false;
+  });
+  Cypress.Commands.add('blockAds', () => {
+    cy.intercept('GET', '**/google/auction/**', { statusCode: 204 });
+    cy.intercept('GET', '**/googlesyndication/**', { statusCode: 204 });
+  });
+  
+  beforeEach(() => {
+    cy.blockAds();
+  });
+  
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
